@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -14,6 +14,11 @@
     <PackageReference Include="coverlet.collector" Version="1.3.0" />
     <PackageReference Include="Ninject.MVC5" Version="3.3.0" />
     <PackageReference Include="Ninject.Web.Common" Version="3.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeardBar.Domain\BeardBar.Domain.csproj" />
+    <ProjectReference Include="..\BeardBar.WebUI\BeardBar.WebUI.csproj" />
   </ItemGroup>
 
 </Project>
