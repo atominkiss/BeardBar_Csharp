@@ -27,7 +27,14 @@ namespace BeardBar.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            //Здесь будут привязки
+            Mock<IBeerRepository> mock = new Mock<IBeerRepository>();
+            mock.Setup(m => m.Beers).Returns(new List<Beer>
+            {
+                new Beer { Name = "Maisels Wise", Price = 1499 },
+                new Beer { Name = "Prachka", Price=2299 },
+                new Beer { Name = "Sint Gumarus", Price=899.4M }
+            });
+            kernel.Bind<IGameRepository>().ToConstant(mock.Object);
         }
     }
 }
